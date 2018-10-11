@@ -20,3 +20,11 @@ $db = new Illuminate\Database\Capsule\Manager();
 $db->addConnection($config['database']);
 $db->setAsGlobal();
 $db->bootEloquent();
+
+
+$user = \twerkerapp\model\User::find('10');
+
+$tweet = \twerkerapp\model\Tweet::find(73);
+var_dump($tweet->tweet);
+
+

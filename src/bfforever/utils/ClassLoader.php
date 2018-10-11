@@ -21,17 +21,11 @@ class ClassLoader
      * @param $class_name
      */
     private function loadClass($class_name){
-        try{
-            $file = str_replace('\\',DIRECTORY_SEPARATOR, $class_name);
-            $file = $this->prefix . DIRECTORY_SEPARATOR . $file . ".php";
-            if(file_exists($file)){
-                /** @noinspection PhpIncludeInspection */
-                require_once($file);
-            } else {
-                throw new \Exception("File: " . $file . " for the class " . $class_name . " doesn't exists.");
-            }
-        } catch (\Exception $e){
-            die($e->getMessage());
+        $file = str_replace('\\',DIRECTORY_SEPARATOR, $class_name);
+        $file = $this->prefix . DIRECTORY_SEPARATOR . $file . ".php";
+        if(file_exists($file)){
+            /** @noinspection PhpIncludeInspection */
+            require_once($file);
         }
     }
 
