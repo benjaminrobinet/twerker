@@ -22,9 +22,11 @@ $db->setAsGlobal();
 $db->bootEloquent();
 
 
-$user = \twerkerapp\model\User::find('10');
-
+//$user = \twerkerapp\model\User::find(10);
+//
+//foreach ($user->tweets as $tweet){
+//    echo $tweet;
+//}
+//
 $tweet = \twerkerapp\model\Tweet::find(73);
-var_dump($tweet->tweet);
-
 

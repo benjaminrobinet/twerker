@@ -9,11 +9,11 @@ class Tweet extends Model
     protected $table = 'tweet';
     protected $primaryKey = 'id';
 
-    public $text;
-    public $author;
-    public $score;
+    protected $text;
+    protected $author;
+    protected $score;
 
     public function user(){
-        return $this->belongsTo('twerkerapp\model\User', 'author');
+        return $this->belongsTo(User::class, 'author');
     }
 }

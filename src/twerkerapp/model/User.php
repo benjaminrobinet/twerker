@@ -10,13 +10,13 @@ class User extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
-    public $fullname;
-    public $username;
-    public $password;
-    public $level;
-    public $followers;
+    protected $fullname;
+    protected $username;
+    protected $password;
+    protected $level;
+    protected $followers;
 
     public function tweets(){
-        return $this->hasMany('twerkerapp\model\Tweet');
+        return $this->hasMany(Tweet::class, 'author');
     }
 }
