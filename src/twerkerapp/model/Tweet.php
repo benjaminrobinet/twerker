@@ -8,12 +8,13 @@ class Tweet extends Model
 {
     protected $table = 'tweet';
     protected $primaryKey = 'id';
+    public $timestamps = true;
 
-    protected $text;
-    protected $author;
-    protected $score;
-
-    public function user(){
+    public function author(){
         return $this->belongsTo(User::class, 'author');
+    }
+
+    public function likedBy(){
+        return $this->belongsToMany(User::class, 'like', 'tweet_id');
     }
 }

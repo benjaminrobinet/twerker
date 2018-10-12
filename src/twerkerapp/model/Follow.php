@@ -10,6 +10,6 @@ class Follow extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
-    public $follower;
-    public $followee;
+    protected $follower;
+    protected $followee;
 }
