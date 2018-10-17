@@ -18,6 +18,7 @@ namespace twerkerapp\controller;
 
 use bfforever\controller\AbstractController;
 use twerkerapp\model\Tweet;
+use twerkerapp\view\TweeterView;
 
 class TweeterController extends AbstractController {
 
@@ -36,7 +37,9 @@ class TweeterController extends AbstractController {
          *
          */
 
-        echo Tweet::all();
+        $tweets = Tweet::all();
+        $tweeterView = new TweeterView($tweets);
+        echo $tweeterView->renderHome();
     }
 
     public function viewTweet(){
@@ -57,9 +60,7 @@ class TweeterController extends AbstractController {
          *
          */
 
-        $id = $this->request->get['id'];
 
-        echo Tweet::find($id);
     }
 
     public function viewUserTweets(){

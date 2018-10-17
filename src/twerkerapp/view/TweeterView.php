@@ -34,7 +34,7 @@ class TweeterView extends \bfforever\view\AbstractView {
      *  
      */
     
-    private function renderHome(){
+    public function renderHome(){
 
         /*
          * Retourne le fragment HTML qui affiche tous les Tweets. 
