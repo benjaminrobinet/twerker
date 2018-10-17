@@ -1,4 +1,6 @@
 <?php
+//header('Content-Type: application/json');
+
 /**
  * Require composer autoload
  */
@@ -21,14 +23,12 @@ $db->addConnection($config['database']);
 $db->setAsGlobal();
 $db->bootEloquent();
 
+$router = new \bfforever\router\Router();
+$router->addRoute('home', '/home', 'TweeterController', 'viewHome');
+$router->addRoute('tweet', '/tweet', 'TweeterController', 'viewTweet');
+$router->setDefaultRoute('/home');
 
-$user = \twerkerapp\model\User::find(10);
+$router->run();
 
-//var_dump($user->followers);
-
-foreach ($user->likes()->get() as $follower){
-    echo($follower);
-}
-
-//$tweet = \twerkerapp\model\Tweet::find(73);
-
+//$ctrl = new \twerkerapp\controller\TweeterController();
+//echo $ctrl->viewHome();
