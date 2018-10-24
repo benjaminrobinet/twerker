@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d89f3a9770235b8df49806102b4fffec",
+    "content-hash": "74d8c162eeda2c8defb7e04934763a13",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -431,6 +431,54 @@
                 "simple-cache"
             ],
             "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
+            "name": "rymanalu/twitter-time-ago",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rymanalu/twitter-time-ago.git",
+                "reference": "ef82a29a0b885e3619aa95a80f54bedeccaa1114"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rymanalu/twitter-time-ago/zipball/ef82a29a0b885e3619aa95a80f54bedeccaa1114",
+                "reference": "ef82a29a0b885e3619aa95a80f54bedeccaa1114",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "~1.18",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Rymanalu\\TwitterTimeAgo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roni Yusuf Manalu",
+                    "email": "rymanalu@gmail.com"
+                }
+            ],
+            "description": "Displays the date in a \"time ago\" format like Twitter.",
+            "homepage": "https://github.com/rymanalu/twitter-time-ago",
+            "keywords": [
+                "time ago",
+                "twitter"
+            ],
+            "time": "2016-12-21T15:33:50+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",

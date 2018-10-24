@@ -4,7 +4,7 @@ namespace bfforever\utils;
 
 abstract class AbstractHttpRequest {
 
-    protected $script_name=null, $path_info=null, $root=null;
+    protected $script_name=null, $path_info=null, $root=null, $prefix=null;
     protected $method=null, $get=null, $post=null;
 
     /**

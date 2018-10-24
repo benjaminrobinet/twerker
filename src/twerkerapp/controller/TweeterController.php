@@ -24,22 +24,15 @@ class TweeterController extends AbstractController {
 
     public function __construct(){
         parent::__construct();
+
+        TweeterView::addStyleSheet('assets/css/default.css');
+        TweeterView::setAppTitle('Twerker');
     }
 
     public function viewHome(){
-
-        /* Algorithme :
-         *
-         *  1 Récupérer tout les tweet en utilisant le modèle Tweet
-         *  2 Parcourir le résultat
-         *      afficher le text du tweet, l'auteur et la date de création
-         *  3 Retourner un block HTML qui met en forme la liste
-         *
-         */
-
-        $tweets = Tweet::all();
+        $tweets = Tweet::orderBy('created_at', 'DESC')->get();
         $tweeterView = new TweeterView($tweets);
-        echo $tweeterView->renderHome();
+        $tweeterView->render('home');
     }
 
     public function viewTweet(){
@@ -60,11 +53,14 @@ class TweeterController extends AbstractController {
          *
          */
 
+        $tweetId = $this->request->get['id'];
 
+        $tweet = Tweet::find($tweetId);
+        $tweeterView = new TweeterView($tweet);
+        $tweeterView->render('tweet');
     }
 
     public function viewUserTweets(){
-
         /*
          *
          *  1 L'identifiant de l'utilisateur en question est passé en
@@ -83,5 +79,30 @@ class TweeterController extends AbstractController {
          *
          */
 
+        $userId = $this->request->get['id'];
+
+        $tweets = Tweet::where('author', $userId)->get();
+        $tweeterView = new TweeterView($tweets);
+        $tweeterView->render('userTweets');
+    }
+
+    public function viewPostTweet(){
+        $tweeterView = new TweeterView();
+        $tweeterView->render('postTweet');
+    }
+
+    public function sendTweet(){
+        $tweet = new Tweet();
+        $tweet->author = 1;
+        $tweet->text = $this->request->post['tweet'];
+        $tweet->save();
+
+        $tweets = Tweet::orderBy('created_at', 'DESC')->get();
+        $tweeterView = new TweeterView($tweets);
+        $tweeterView->render('home');
+    }
+
+    public function phpInfo(){
+        phpinfo();
     }
 }

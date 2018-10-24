@@ -2,7 +2,8 @@
 
 namespace bfforever\router;
 
-use Illuminate\Support\Facades\Route;
+use bfforever\auth\Authentication;
+use bfforever\auth\exception\AuthenticationException;
 
 class Router extends AbstractRouter
 {
@@ -12,8 +13,19 @@ class Router extends AbstractRouter
         $reqUrl = $this->http_req->path_info;
 
         if(array_key_exists($reqUrl, self::$routes)){
-            $controllerName = self::$routes[$reqUrl]['controller'];
-            $methodName = self::$routes[$reqUrl]['method'];
+            try {
+                $authentication = new Authentication();
+                if($authentication->checkAccessRight(self::$routes[$reqUrl]['requiredLevel'])){
+                    $controllerName = self::$routes[$reqUrl]['controller'];
+                    $methodName = self::$routes[$reqUrl]['method'];
+                } else {
+                    $defaultRoute = self::$routes[self::$aliases['default']];
+                    $controllerName = $defaultRoute['controller'];
+                    $methodName = $defaultRoute['method'];
+                }
+            } catch (AuthenticationException $e) {
+                die($e->getMessage());
+            }
         } else {
             $defaultRoute = self::$routes[self::$aliases['default']];
             $controllerName = $defaultRoute['controller'];
@@ -64,7 +76,7 @@ class Router extends AbstractRouter
 
     public function urlFor($route_name, $param_list = [])
     {
-        $prefix = substr($this->http_req->script_name, strlen($this->http_req->root));
+        $prefix = $this->http_req->prefix . basename($this->http_req->script_name);
         $path = self::$aliases[$route_name];
 
         if($param_list){
@@ -74,10 +86,10 @@ class Router extends AbstractRouter
             }
             $query = rtrim($query, "&");
         } else {
-            return "$prefix$path/";
+            return "$prefix$path";
         }
 
-        return "$prefix$path/$query";
+        return "$prefix$path$query";
     }
 
     public function setDefaultRoute($url)
@@ -85,9 +97,9 @@ class Router extends AbstractRouter
         self::$aliases['default'] = $url;
     }
 
-    public function addRoute($name, $url, $ctrl, $mth)
+    public function addRoute($name, $url, $ctrl, $mth, $requiredLevel)
     {
-        self::$routes[$url] = ['controller' => $ctrl, 'method' => $mth];
+        self::$routes[$url] = ['controller' => $ctrl, 'method' => $mth, 'requiredLevel' => $requiredLevel];
         self::$aliases[$name] = $url;
     }
 }

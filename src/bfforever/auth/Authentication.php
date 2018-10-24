@@ -8,11 +8,13 @@
 
 namespace bfforever\auth;
 
+use bfforever\auth\exception\AuthenticationException;
+
 class Authentication extends AbstractAuthentication
 {
     /**
      * Authentication constructor.
-     * @throws \Exception
+     * @throws AuthenticationException
      */
     public function __construct()
     {
@@ -22,7 +24,7 @@ class Authentication extends AbstractAuthentication
                 $this->access_level = $_SESSION['access_level'];
                 $this->logged_in = true;
             } else {
-                throw new \Exception('No access level');
+                throw new AuthenticationException('No access level');
             }
         } else {
             $this->user_login = null;
@@ -56,12 +58,12 @@ class Authentication extends AbstractAuthentication
      * @param $db_pass
      * @param $given_pass
      * @param $level
-     * @throws \Exception
+     * @throws AuthenticationException
      */
     public function login($username, $db_pass, $given_pass, $level)
     {
         if(!$this->verifyPassword($given_pass, $db_pass)){
-            throw new \Exception('Password invalid');
+            throw new AuthenticationException('Password invalid');
         } else {
             $this->updateSession($username, $level);
         }

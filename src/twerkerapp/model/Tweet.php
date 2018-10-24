@@ -10,7 +10,7 @@ class Tweet extends Model
     protected $primaryKey = 'id';
     public $timestamps = true;
 
-    public function author(){
+    public function user(){
         return $this->belongsTo(User::class, 'author');
     }
 

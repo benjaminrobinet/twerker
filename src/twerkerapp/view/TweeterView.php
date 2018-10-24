@@ -2,103 +2,148 @@
 
 namespace twerkerapp\view;
 
+use bfforever\router\Router;
+use bfforever\utils\HttpRequest;
+use twerkerapp\model\Tweet;
+use Rymanalu\TwitterTimeAgo\TwitterTimeAgo;
+
 class TweeterView extends \bfforever\view\AbstractView {
-  
-    /* Constructeur 
-    *
-    * Appelle le constructeur de la classe parent
-    */
-    public function __construct( $data ){
+
+    public function __construct($data = null){
         parent::__construct($data);
     }
 
-    /* Méthode renderHeader
-     *
-     *  Retourne le fragment HTML de l'entête (unique pour toutes les vues)
-     */ 
     private function renderHeader(){
-        return '<h1>MiniTweeTR</h1>';
+        $router = new Router();
+        $html = <<<EOF
+<header>
+    <h1><a href="{$router->urlFor('default')}">{$this::$app_title}</a></h1>
+    <nav><a href="{$router->urlFor('home')}">Home</a><a href="{$router->urlFor('login')}">Login</a><a href="{$router->urlFor('signup')}">Sign-up</a></nav>
+</header>
+EOF;
+
+        return $html;
     }
-    
-    /* Méthode renderFooter
-     *
-     * Retourne le fragment HTML du bas de la page (unique pour toutes les vues)
-     */
+
     private function renderFooter(){
-        return 'La super app créée en Licence Pro &copy;2018';
+        return '<footer>La super app créée en Licence Pro &copy;2018</footer>';
     }
-
-    /* Méthode renderHome
-     *
-     * Vue de la fonctionalité afficher tous les Tweets. 
-     *  
-     */
-    
     public function renderHome(){
+        $router = new Router();
+        $timeAgo = new TwitterTimeAgo();
+        $html = '';
+        foreach ($this->data as $tweet){
+            $tweetTemplate = <<<EOF
+<article>
+    <section class="informations">
+        <a href="{$router->urlFor('user', [['id', $tweet->user->id]])}">
+            <div class="name">{$tweet->user->fullname}</div>
+            <div class="username">@{$tweet->user->username}</div>
+        </a>
+        <div class="date">{$timeAgo->parse($tweet->created_at)}</div>
+    </section>
+    <section class="content">
+        <a href="{$router->urlFor('tweet', [['id', $tweet->id]])}">{$tweet->text}</a>
+    </section>
+    <section class="actions">
+        <a href="">+</a>
+        <a href="">-</a>
+        <div class="score">{$tweet->score}</div>
+    </section>
+</article>
 
-        /*
-         * Retourne le fragment HTML qui affiche tous les Tweets. 
-         *  
-         * L'attribut $this->data contient un tableau d'objets tweet.
-         * 
-         */
-        
-        
+EOF;
+            $html .= $tweetTemplate;
+        }
+        return $html;
     }
-  
-    /* Méthode renderUeserTweets
-     *
-     * Vue de la fonctionalité afficher tout les Tweets d'un utilisateur donné. 
-     * 
-     */
-     
+
     private function renderUserTweets(){
-
-        /* 
-         * Retourne le fragment HTML pour afficher
-         * tous les Tweets d'un utilisateur donné. 
-         *  
-         * L'attribut $this->data contient un objet User.
-         *
-         */
-        
-    }
-  
-    /* Méthode renderViewTweet 
-     * 
-     * Rréalise la vue de la fonctionnalité affichage d'un tweet
-     *
-     */
-    
-    private function renderViewTweet(){
-
-        /* Méthode renderViewTweet 
-         * 
-         * Retourne le fragment HTML qui réalise l'affichage d'un tweet 
-         * en particulié 
-         * 
-         * L'attribut $this->data contient un objet Tweet
-         *
-         */
-        
+        $router = new Router();
+        $timeAgo = new TwitterTimeAgo();
+        $html = '';
+        foreach ($this->data as $tweet){
+            $tweetTemplate = <<<EOF
+<article>
+    <section class="informations">
+        <a href="{$router->urlFor('user', [['id', $tweet->user->id]])}">
+            <div class="name">{$tweet->user->fullname}</div>
+            <div class="username">@{$tweet->user->username}</div>
+        </a>
+        <div class="date">{$timeAgo->parse($tweet->created_at)}</div>
+    </section>
+    <section class="content">
+        <a href="{$router->urlFor('tweet', [['id', $tweet->id]])}">{$tweet->text}</a>
+    </section>
+    <section class="actions">
+        <a href="">+</a>
+        <a href="">-</a>
+        <div class="score">{$tweet->score}</div>
+    </section>
+</article>
+EOF;
+            $html .= $tweetTemplate;
+        }
+        return $html;
     }
 
+    private function renderTweet(){
 
+        $router = new Router();
+        $timeAgo = new TwitterTimeAgo();
+        $tweet = $this->data;
+        $html = <<<EOF
+<article>
+    <section class="informations">
+        <a href="{$router->urlFor('user', [['id', $tweet->user->id]])}">
+            <div class="name">{$tweet->user->fullname}</div>
+            <div class="username">@{$tweet->user->username}</div>
+        </a>
+        <div class="date">{$timeAgo->parse($tweet->created_at)}</div>
+    </section>
+    <section class="content">
+        <a href="{$router->urlFor('tweet', [['id', $tweet->id]])}">{$tweet->text}</a>
+    </section>
+    <section class="actions">
+        <a href="">+</a>
+        <a href="">-</a>
+        <div class="score">{$tweet->score}</div>
+    </section>
+</article>
+EOF;
+        return $html;
+        
+    }
 
-    /* Méthode renderBody
-     *
-     * Retourne la framgment HTML de la balise <body> elle est appelée
-     * par la méthode héritée render.
-     *
-     */
-    
+    private function renderPostTweet(){
+        $router = new Router();
+
+        $html = <<<EOF
+<section class="form">
+    <form action="{$router->urlFor('send')}" method="post">
+        <textarea name="tweet"></textarea>
+        <button type="submt">Envoyer</button>
+    </form>
+</section>
+EOF;
+        return $html;
+    }
+
     protected function renderBody($selector=null){
+        $renderMethod = 'render'.ucfirst($selector);
 
-        /*
-         * voire la classe AbstractView
-         * 
-         */
-        
+        $header = $this->renderHeader();
+        $content = $this->{$renderMethod}();
+        $footer = $this->renderFooter();
+
+        $html = <<<EOF
+{$header}
+<main>
+    {$content}
+</main>
+{$footer}
+EOF;
+        return $html;
     }
 
 
