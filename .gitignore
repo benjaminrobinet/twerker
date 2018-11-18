@@ -5,9 +5,6 @@ vendor/
 # System files
 .DS_Store
 
-# IDE files
-.idea/
-
 # App files
 conf/configuration.ini
 
