@@ -30,8 +30,8 @@ $db->bootEloquent();
  * Router
  * */
 $router = new \bfforever\router\Router();
-$router->addRoute('home', '/home/', 'TweeterController', 'viewHome', TweeterAuthentication::ACCESS_LEVEL_USER);
-$router->addRoute('tweet', '/tweet/', 'TweeterController', 'viewTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
+$router->addRoute('home', '/home/', 'TweeterController', 'viewHome', TweeterAuthentication::ACCESS_LEVEL_NONE);
+$router->addRoute('tweet', '/tweet/', 'TweeterController', 'viewTweet', TweeterAuthentication::ACCESS_LEVEL_NONE);
 $router->addRoute('user', '/user/', 'TweeterController', 'viewUserTweets', TweeterAuthentication::ACCESS_LEVEL_NONE);
 $router->addRoute('login', '/login/', 'TweeterController', 'phpInfo', TweeterAuthentication::ACCESS_LEVEL_NONE);
 $router->addRoute('signup', '/signup/', 'TweeterController', 'phpInfo', TweeterAuthentication::ACCESS_LEVEL_NONE);

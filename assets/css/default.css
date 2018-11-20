@@ -1,6 +1,9 @@
 body{
     margin: 0;
     font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
 }
 
 *{
@@ -66,6 +69,9 @@ main article section.informations{
 main article section.informations a{
     display: block;
 }
+main article section.informations a:hover {
+    text-decoration: none;
+}
 main article section.informations div.date{
     color: grey;
 }
@@ -76,6 +82,29 @@ main article section.content{
 main article section.content a:hover{
     text-decoration: none;
     color: black;
+}
+
+main article section.actions{
+    display: flex;
+    align-items: center;
+}
+
+main article section.actions a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f3f3f3;
+    border: 1px solid #9f9f9f;
+    margin-right: 20px;
+    transition: background-color 0.05s ease-in-out;
+}
+
+main article section.actions a:hover {
+    text-decoration: none;
+    background-color: #f8f8f8;
 }
 
 main article section a{

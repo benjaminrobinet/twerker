@@ -13,21 +13,6 @@ class TweeterView extends \bfforever\view\AbstractView {
         parent::__construct($data);
     }
 
-    private function renderHeader(){
-        $router = new Router();
-        $html = <<<EOF
-<header>
-    <h1><a href="{$router->urlFor('default')}">{$this::$app_title}</a></h1>
-    <nav><a href="{$router->urlFor('home')}">Home</a><a href="{$router->urlFor('login')}">Login</a><a href="{$router->urlFor('signup')}">Sign-up</a></nav>
-</header>
-EOF;
-
-        return $html;
-    }
-
-    private function renderFooter(){
-        return '<footer>La super app créée en Licence Pro &copy;2018</footer>';
-    }
     public function renderHome(){
         $router = new Router();
         $timeAgo = new TwitterTimeAgo();
@@ -129,6 +114,28 @@ EOF;
         return $html;
     }
 
+    private function renderHeader(){
+        $router = new Router();
+        $html = <<<EOF
+<header>
+    <h1><a href="{$router->urlFor('default')}">{$this::$app_title}</a></h1>
+    <nav><a href="{$router->urlFor('home')}">Home</a><a href="{$router->urlFor('login')}">Login</a><a href="{$router->urlFor('signup')}">Sign-up</a></nav>
+</header>
+EOF;
+
+        return $html;
+    }
+
+    /*
+     * Render Footer, should not be modified
+     */
+    private function renderFooter(){
+        return '<footer>La super app créée en Licence Pro &copy;2018</footer>';
+    }
+
+    /*
+     * Render body, should not be modified
+     * */
     protected function renderBody($selector=null){
         $renderMethod = 'render'.ucfirst($selector);
 
