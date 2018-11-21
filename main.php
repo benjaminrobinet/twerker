@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Capsule\Manager as DB;
 use twerkerapp\auth\TweeterAuthentication;
 
 session_start();
@@ -26,6 +27,8 @@ $db->addConnection($config['database']);
 $db->setAsGlobal();
 $db->bootEloquent();
 
+DB::connection()->enableQueryLog();
+
 /*
  * Router
  * */
@@ -40,3 +43,5 @@ $router->addRoute('send', '/send/', 'TweeterController', 'sendTweet', TweeterAut
 $router->setDefaultRoute('/home/');
 
 $router->run();
+
+$queries = DB::getQueryLog();

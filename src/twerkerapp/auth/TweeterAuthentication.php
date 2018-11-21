@@ -22,6 +22,7 @@ class TweeterAuthentication extends \bfforever\auth\Authentication {
      * depuis AbstractAuthentification 
      */
     const ACCESS_LEVEL_USER  = 100;   
+    const ACCESS_LEVEL_PARTNER = 150;
     const ACCESS_LEVEL_ADMIN = 200;
 
     /* constructeur */
@@ -29,7 +30,7 @@ class TweeterAuthentication extends \bfforever\auth\Authentication {
         parent::__construct();
     }
 
-    public function createUser($username, $pass, $fullname, $level=self::ACCESS_LEVEL_USER) {
+    public function createUser($username, $pass, $fullname, $level = self::ACCESS_LEVEL_USER) {
         $userExists = User::where('username', $username)->first();
         if(!$userExists){
             $user = new User();
@@ -59,7 +60,6 @@ class TweeterAuthentication extends \bfforever\auth\Authentication {
      *      - réaliser l'authentification et la connexion
      *
      */
-
     /**
      * @param $username
      * @param $password
@@ -71,6 +71,7 @@ class TweeterAuthentication extends \bfforever\auth\Authentication {
             try {
                 $this->login($username, $expectedUser->password, $password, $expectedUser->level);
             } catch (AuthenticationException $e) {
+                throw new AuthenticationException('Check your credentials.');
             }
         } else {
             throw new AuthenticationException('This user doesn\'t exists');

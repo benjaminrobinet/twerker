@@ -125,6 +125,61 @@ main article section div.username{
     color: grey;
 }
 
+footer {
+    padding: 20px 0 10px;
+    text-align: center;
+}
+
+a#create{
+    text-decoration: none;
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #51E9FF;
+    border: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    line-height: 32px;
+    color: black;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease-in-out;
+}
+
+a#create:hover{
+    transform: rotate(90deg);
+}
+
+section#create{
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section#create form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+section#create textarea{
+    border: 1px solid #51E9FF;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 50vw;
+    height: 100px;
+}
+
 @media screen and (max-width: 500px){
     main article{
         width: 100%;

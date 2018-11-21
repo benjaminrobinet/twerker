@@ -30,7 +30,7 @@ class TweeterController extends AbstractController {
     }
 
     public function viewHome(){
-        $tweets = Tweet::orderBy('created_at', 'DESC')->get();
+        $tweets = Tweet::with('user')->orderBy('created_at', 'DESC')->get();
         $tweeterView = new TweeterView($tweets);
         $tweeterView->render('home');
     }
@@ -55,9 +55,13 @@ class TweeterController extends AbstractController {
 
         $tweetId = $this->request->get['id'];
 
-        $tweet = Tweet::find($tweetId);
-        $tweeterView = new TweeterView($tweet);
-        $tweeterView->render('tweet');
+        $tweet = Tweet::with('user')->find($tweetId);
+        if(!empty($tweet)){
+            $tweeterView = new TweeterView($tweet);
+            $tweeterView->render('tweet');
+        } else {
+            $this->forward('ErrorController', 'notFound');
+        }
     }
 
     public function viewUserTweets(){
@@ -81,7 +85,7 @@ class TweeterController extends AbstractController {
 
         $userId = $this->request->get['id'];
 
-        $tweets = Tweet::where('author', $userId)->get();
+        $tweets = Tweet::where('author', $userId)->with('user')->get();
         $tweeterView = new TweeterView($tweets);
         $tweeterView->render('userTweets');
     }
