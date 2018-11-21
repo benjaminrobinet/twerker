@@ -36,10 +36,15 @@ $router = new \bfforever\router\Router();
 $router->addRoute('home', '/home/', 'TweeterController', 'viewHome', TweeterAuthentication::ACCESS_LEVEL_NONE);
 $router->addRoute('tweet', '/tweet/', 'TweeterController', 'viewTweet', TweeterAuthentication::ACCESS_LEVEL_NONE);
 $router->addRoute('user', '/user/', 'TweeterController', 'viewUserTweets', TweeterAuthentication::ACCESS_LEVEL_NONE);
-$router->addRoute('login', '/login/', 'TweeterController', 'phpInfo', TweeterAuthentication::ACCESS_LEVEL_NONE);
-$router->addRoute('signup', '/signup/', 'TweeterController', 'phpInfo', TweeterAuthentication::ACCESS_LEVEL_NONE);
+$router->addRoute('login', '/login/', 'TweeterAdminController', 'viewLogin', TweeterAuthentication::ACCESS_LEVEL_NONE);
+$router->addRoute('logout', '/logout/', 'TweeterAdminController', 'makeLogout', TweeterAuthentication::ACCESS_LEVEL_USER);
+$router->addRoute('login_check', '/login_check/', 'TweeterAdminController', 'checkLogin', TweeterAuthentication::ACCESS_LEVEL_NONE);
+$router->addRoute('signup', '/signup/', 'TweeterAdminController', 'viewSignup', TweeterAuthentication::ACCESS_LEVEL_NONE);
+$router->addRoute('signup_check', '/signup_check/', 'TweeterAdminController', 'checkSignup', TweeterAuthentication::ACCESS_LEVEL_NONE);
+$router->addRoute('me', '/me/', 'TweeterController', 'viewMe', TweeterAuthentication::ACCESS_LEVEL_USER);
 $router->addRoute('post', '/post/', 'TweeterController', 'viewPostTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
 $router->addRoute('send', '/send/', 'TweeterController', 'sendTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
+$router->addRoute('dashboard', '/dashboard/', 'DashboardControler', 'viewSphere', TweeterAuthentication::ACCESS_LEVEL_USER);
 $router->setDefaultRoute('/home/');
 
 $router->run();

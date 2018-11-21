@@ -3,7 +3,7 @@
 namespace bfforever\router;
 
 use bfforever\auth\Authentication;
-use bfforever\auth\exception\AuthenticationException;
+use bfforever\auth\AuthenticationException;
 
 class Router extends AbstractRouter
 {

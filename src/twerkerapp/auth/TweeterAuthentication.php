@@ -2,7 +2,7 @@
 
 namespace twerkerapp\auth;
 
-use bfforever\auth\exception\AuthenticationException;
+use bfforever\auth\AuthenticationException;
 use twerkerapp\model\User;
 
 class TweeterAuthentication extends \bfforever\auth\Authentication {
@@ -38,6 +38,7 @@ class TweeterAuthentication extends \bfforever\auth\Authentication {
             $user->fullname = $fullname;
             $user->password = $this->hashPassword($pass);
             $user->level = $level;
+            $user->save();
         } else {
             throw new AuthenticationException('User already exists');
         }
@@ -66,7 +67,7 @@ class TweeterAuthentication extends \bfforever\auth\Authentication {
      * @throws AuthenticationException
      */
     public function loginUser($username, $password){
-        $expectedUser = User::where('username', $username)->first();
+        $expectedUser = User::where('username', '=', $username)->first();
         if($expectedUser){
             try {
                 $this->login($username, $expectedUser->password, $password, $expectedUser->level);

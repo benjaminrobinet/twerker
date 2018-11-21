@@ -16,8 +16,12 @@ namespace twerkerapp\controller;
  *
  */
 
+use bfforever\auth\Authentication;
 use bfforever\controller\AbstractController;
+use Illuminate\Support\Facades\Auth;
+use twerkerapp\auth\TweeterAuthentication;
 use twerkerapp\model\Tweet;
+use twerkerapp\model\User;
 use twerkerapp\view\TweeterView;
 
 class TweeterController extends AbstractController {
@@ -95,10 +99,24 @@ class TweeterController extends AbstractController {
         $tweeterView->render('postTweet');
     }
 
+    public function viewMe(){
+        $authentication = new TweeterAuthentication();
+//        $userTweets = Tweet::with('tweets')->where('username', '=', $authentication->user_login)->first();
+//        var_dump($userTweets); die();
+
+        $userId = User::where('username', $authentication->user_login)->first()->id;
+        $userTweets = Tweet::where('author', $userId)->with('user')->orderBy('created_at', 'DESC')->get();
+        $tweeterView = new TweeterView($userTweets);
+        $tweeterView->render('me');
+    }
+
     public function sendTweet(){
+        $authentication = new Authentication();
+        $userId = User::where('username', $authentication->user_login)->first()->id;
+
         $tweet = new Tweet();
-        $tweet->author = 1;
-        $tweet->text = $this->request->post['tweet'];
+        $tweet->author = $userId;
+        $tweet->text = htmlspecialchars($this->request->post['tweet']);
         $tweet->save();
 
         $tweets = Tweet::orderBy('created_at', 'DESC')->get();

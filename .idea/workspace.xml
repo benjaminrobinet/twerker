@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="03f6ffb1-88d4-44f6-8e1c-2d4bfec41a87" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/default.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/default.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bfforever/controller/AbstractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bfforever/controller/AbstractController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bfforever/auth/Authentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bfforever/auth/Authentication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bfforever/auth/AuthenticationException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bfforever/auth/AuthenticationException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bfforever/router/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/bfforever/router/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/twerkerapp/auth/TweeterAuthentication.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/twerkerapp/auth/TweeterAuthentication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/twerkerapp/controller/TweeterAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/twerkerapp/controller/TweeterAdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/twerkerapp/controller/TweeterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/twerkerapp/controller/TweeterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/twerkerapp/model/Follow.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/twerkerapp/model/Follow.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +31,9 @@
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -38,7 +42,8 @@
           <entry key="dist" value="1" />
           <entry key="gitignore" value="1" />
           <entry key="ini" value="1" />
-          <entry key="php" value="27" />
+          <entry key="json" value="1" />
+          <entry key="php" value="42" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
@@ -46,7 +51,8 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="Ini" value="1" />
-          <entry key="PHP" value="27" />
+          <entry key="JSON" value="1" />
+          <entry key="PHP" value="42" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="1" />
         </counts>
@@ -54,14 +60,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="1040" />
-          <entry key="php" value="2850" />
+          <entry key="php" value="6049" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1040" />
-          <entry key="HTML" value="8" />
-          <entry key="PHP" value="2842" />
+          <entry key="HTML" value="21" />
+          <entry key="PHP" value="6028" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
@@ -72,115 +78,120 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49673676">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/twerkerapp/auth/TweeterAuthentication.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-69">
-                  <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-                  <folding>
-                    <element signature="e#191#350#0#PHP" />
-                    <element signature="e#356#666#0#PHP" />
-                    <element signature="e#1341#1909#0#PHP" />
-                    <element signature="e#1915#2013#0#PHP" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/TweeterAdminController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/twerkerapp/model/User.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
-                  <caret line="5" selection-start-line="5" selection-end-line="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/main.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="606">
-                  <caret line="40" column="114" selection-start-line="40" selection-start-column="114" selection-end-line="40" selection-end-column="114" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="644">
-                  <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/assets/css/default.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4117">
-                  <caret line="179" column="13" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/TweeterController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="612">
-                  <caret line="87" column="63" selection-start-line="87" selection-start-column="63" selection-end-line="87" selection-end-column="63" />
-                  <folding>
-                    <element signature="e#41#395#0#PHP" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bfforever/controller/AbstractController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/ErrorController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="15" column="28" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bfforever/view/AbstractView.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1311">
-                  <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="46" column="65" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="492">
+              <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+              <folding>
+                <element signature="e#35#69#0#PHP" expanded="true" />
+                <element signature="e#365#447#0#PHP" />
+                <element signature="e#453#542#0#PHP" />
+                <element signature="e#548#631#0#PHP" />
+                <element signature="e#637#955#0#PHP" />
+                <element signature="e#722#926#0#PHP" />
+                <element signature="e#1655#2259#0#PHP" />
+                <element signature="e#2265#2320#0#PHP" />
+                <element signature="e#2325#2443#0#PHP" />
+                <element signature="e#42#48#0" expanded="true" />
+                <element signature="e#2449#2504#0#PHP" />
+                <element signature="e#2509#2933#0#PHP" />
+                <element signature="e#2939#3810#0#PHP" />
+                <element signature="e#3815#4611#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/TweeterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="122" column="48" lean-forward="true" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="48" />
+              <folding>
+                <element signature="e#41#395#0#PHP" />
+                <element signature="e#397#431#0#PHP" expanded="true" />
+                <element signature="e#946#1944#0#PHP" />
+                <element signature="e#1950#2952#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/TweeterAdminController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="48" column="41" lean-forward="true" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+              <folding>
+                <element signature="e#124#158#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bfforever/auth/Authentication.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="77" column="26" lean-forward="true" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/twerkerapp/auth/TweeterAuthentication.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+              <folding>
+                <element signature="e#191#350#0#PHP" />
+                <element signature="e#356#666#0#PHP" />
+                <element signature="e#1381#1949#0#PHP" />
+                <element signature="e#1954#2052#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/twerkerapp/model/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/default.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4117">
+              <caret line="179" column="13" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -191,7 +202,14 @@
       <find>username</find>
       <find>&lt;pre</find>
       <find>postTw</find>
+      <find>bfforever\auth\exception\AuthenticationException</find>
+      <find>urlFor</find>
+      <find>sendTw</find>
+      <find>order</find>
     </findStrings>
+    <replaceStrings>
+      <replace>bfforever\auth\AuthenticationException</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -202,15 +220,18 @@
         <option value="$PROJECT_DIR$/src/twerkerapp/model/Tweet.php" />
         <option value="$PROJECT_DIR$/src/bfforever/utils/HttpRequest.php" />
         <option value="$PROJECT_DIR$/src/bfforever/utils/HttpRequestTest.php" />
-        <option value="$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php" />
         <option value="$PROJECT_DIR$/assets/css/default.css" />
-        <option value="$PROJECT_DIR$/main.php" />
-        <option value="$PROJECT_DIR$/src/bfforever/auth/Authentication.php" />
-        <option value="$PROJECT_DIR$/src/twerkerapp/auth/TweeterAuthentication.php" />
         <option value="$PROJECT_DIR$/src/twerkerapp/model/User.php" />
-        <option value="$PROJECT_DIR$/src/twerkerapp/controller/TweeterAdminController.php" />
         <option value="$PROJECT_DIR$/src/bfforever/controller/AbstractController.php" />
+        <option value="$PROJECT_DIR$/src/bfforever/auth/AuthenticationException.php" />
+        <option value="$PROJECT_DIR$/src/bfforever/auth/Authentication.php" />
+        <option value="$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php" />
+        <option value="$PROJECT_DIR$/src/twerkerapp/controller/TweeterAdminController.php" />
+        <option value="$PROJECT_DIR$/src/twerkerapp/auth/TweeterAuthentication.php" />
         <option value="$PROJECT_DIR$/src/twerkerapp/controller/TweeterController.php" />
+        <option value="$PROJECT_DIR$/main.php" />
+        <option value="$PROJECT_DIR$/src/twerkerapp/model/Follow.php" />
+        <option value="$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php" />
       </list>
     </option>
   </component>
@@ -325,6 +346,13 @@
               <item name="twerker" type="b2602c69:ProjectViewProjectNode" />
               <item name="twerker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bfforever" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="twerker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twerker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="twerkerapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,6 +374,13 @@
               <item name="twerker" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="twerkerapp" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="twerker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="twerker" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="twerkerapp" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -359,9 +394,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cours\twerker\src\twerkerapp\controller" />
       <recent name="C:\xampp\htdocs\cours\twerker\conf" />
     </key>
   </component>
@@ -394,17 +432,18 @@
       <workItem from="1542551390043" duration="80000" />
       <workItem from="1542744175776" duration="4198000" />
       <workItem from="1542798006708" duration="2272000" />
+      <workItem from="1542823967756" duration="11106000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14224000" />
+    <option name="totallyTimeSpent" value="25330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2657082" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2683706" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -419,6 +458,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32899022" />
+      <window_info anchor="right" x="0" y="0" width="434" height="866" id="Documentation" side_tool="true" weight="0.32960597" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -474,82 +514,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="40" column="114" selection-start-line="40" selection-start-column="114" selection-end-line="40" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="32" column="11" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4117">
-          <caret line="179" column="13" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bfforever/view/AbstractView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/twerkerapp/model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bfforever/auth/AuthenticationException.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/bfforever/auth/Authentication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1426">
-          <caret line="67" column="52" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bfforever/router/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1145">
           <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/twerkerapp/auth/TweeterAuthentication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-69">
-          <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding>
-            <element signature="e#191#350#0#PHP" />
-            <element signature="e#356#666#0#PHP" />
-            <element signature="e#1341#1909#0#PHP" />
-            <element signature="e#1915#2013#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/TweeterAdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/ErrorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -560,6 +528,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/default.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4117">
+          <caret line="179" column="13" selection-start-line="179" selection-start-column="13" selection-end-line="179" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bfforever/controller/AbstractController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -567,13 +542,131 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/twerkerapp/model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bfforever/view/AbstractView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/ErrorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bfforever/auth/AbstractAuthentication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-736">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bfforever/utils/ClassLoader.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bfforever/auth/AuthenticationException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bfforever/auth/Authentication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="77" column="26" lean-forward="true" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twerkerapp/auth/TweeterAuthentication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding>
+            <element signature="e#191#350#0#PHP" />
+            <element signature="e#356#666#0#PHP" />
+            <element signature="e#1381#1949#0#PHP" />
+            <element signature="e#1954#2052#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/TweeterAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="48" column="41" lean-forward="true" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding>
+            <element signature="e#124#158#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/TweeterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="87" column="63" selection-start-line="87" selection-start-column="63" selection-end-line="87" selection-end-column="63" />
+        <state relative-caret-position="672">
+          <caret line="122" column="48" lean-forward="true" selection-start-line="122" selection-start-column="48" selection-end-line="122" selection-end-column="48" />
           <folding>
             <element signature="e#41#395#0#PHP" />
+            <element signature="e#397#431#0#PHP" expanded="true" />
+            <element signature="e#946#1944#0#PHP" />
+            <element signature="e#1950#2952#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+          <folding>
+            <element signature="e#35#69#0#PHP" expanded="true" />
+            <element signature="e#365#447#0#PHP" />
+            <element signature="e#453#542#0#PHP" />
+            <element signature="e#548#631#0#PHP" />
+            <element signature="e#637#955#0#PHP" />
+            <element signature="e#722#926#0#PHP" />
+            <element signature="e#1655#2259#0#PHP" />
+            <element signature="e#2265#2320#0#PHP" />
+            <element signature="e#2325#2443#0#PHP" />
+            <element signature="e#42#48#0" expanded="true" />
+            <element signature="e#2449#2504#0#PHP" />
+            <element signature="e#2509#2933#0#PHP" />
+            <element signature="e#2939#3810#0#PHP" />
+            <element signature="e#3815#4611#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="46" column="65" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twerkerapp/model/Follow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
         </state>
       </provider>
     </entry>

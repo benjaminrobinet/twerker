@@ -1,5 +1,5 @@
 <?php
 
-namespace bfforever\auth\exception;
+namespace bfforever\auth;
 
 class AuthenticationException extends \Exception { }
