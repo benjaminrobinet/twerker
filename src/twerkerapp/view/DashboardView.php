@@ -9,37 +9,30 @@ use phpDocumentor\Reflection\TypeResolver;
 use twerkerapp\model\Tweet;
 use Rymanalu\TwitterTimeAgo\TwitterTimeAgo;
 
-class TweeterView extends \bfforever\view\AbstractView {
+class DashboardView extends \bfforever\view\AbstractView {
 
     public function __construct($data = null){
         parent::__construct($data);
     }
 
     public function renderHome(){
-        return $this->makeTweets($this->data);
-    }
+        $html = '<table id="user_followers">';
+        $html .= '<thead>';
+        $html .= '<tr>
+            <th>User</th>
+            <th>Followers (count)</th>
+        </tr>';
+        $html .= '</thead>';
+        $html .= '<tbody>';
+        foreach ($this->data as $user){
+            $html .= '<tr>
+                <td>' . $user->username . ' ('. $user->fullname .')</td>
+                <td>' . $user->followers . '</td>
+            </tr>';
+        }
+        $html .= '</tbody>';
+        $html .= '</table>';
 
-    public function renderUserTweets(){
-        $html = '<p class="followers_count">Followers: ' . $this->data['followers_count'] . '</p>';
-        $html .= $this->makeTweets($this->data['tweets']);
-        return $html;
-    }
-
-    public function renderTweet(){
-        return $this->makeTweet($this->data);
-    }
-
-    public function renderPostTweet(){
-        $router = new Router();
-
-        $html = <<<EOF
-<section id="create">
-    <form action="{$router->urlFor('send')}" method="post">
-        <textarea name="tweet"></textarea>
-        <button type="submt">Envoyer</button>
-    </form>
-</section>
-EOF;
         return $html;
     }
 
@@ -96,7 +89,7 @@ EOF;
         $router = new Router();
         $html = <<<EOF
 <header>
-    <h1><a href="{$router->urlFor('default')}">{$this::$app_title}</a></h1>
+    <h1><a href="{$router->urlFor('dashboard')}">{$this::$app_title}</a></h1>
     <nav><a href="{$router->urlFor('home')}">Home</a>{$part_login}{$part_signup}</nav>
 </header>
 EOF;
@@ -126,63 +119,8 @@ EOF;
 {$header}
 <main>
     {$content}
-    <a href="{$router->urlFor('post')}" id="create">+</a>
 </main>
 {$footer}
-EOF;
-        return $html;
-    }
-
-    protected function makeTweets($tweets){
-        $router = new Router();
-        $timeAgo = new TwitterTimeAgo();
-
-        $html = '';
-        foreach ($tweets as $tweet){
-            $html .= <<<EOF
-<article>
-    <section class="informations">
-        <a href="{$router->urlFor('user', [['id', $tweet->user->id]])}">
-            <div class="name">{$tweet->user->fullname}</div>
-            <div class="username">@{$tweet->user->username}</div>
-        </a>
-        <div class="date">{$timeAgo->parse($tweet->created_at)}</div>
-    </section>
-    <section class="content">
-        <a href="{$router->urlFor('tweet', [['id', $tweet->id]])}">{$tweet->text}</a>
-    </section>
-    <section class="actions">
-        <a href="{$router->urlFor('like', [['id', $tweet->id]])}">+</a>
-        <a href="{$router->urlFor('dislike', [['id', $tweet->id]])}">-</a>
-        <div class="score">{$tweet->score}</div>
-    </section>
-</article>
-EOF;
-        };
-        return $html;
-    }
-    protected function makeTweet($tweet){
-        $router = new Router();
-        $timeAgo = new TwitterTimeAgo();
-
-        $html = <<<EOF
-<article>
-    <section class="informations">
-        <a href="{$router->urlFor('user', [['id', $tweet->user->id]])}">
-            <div class="name">{$tweet->user->fullname}</div>
-            <div class="username">@{$tweet->user->username}</div>
-        </a>
-        <div class="date">{$timeAgo->parse($tweet->created_at)}</div>
-    </section>
-    <section class="content">
-        <a href="{$router->urlFor('tweet', [['id', $tweet->id]])}">{$tweet->text}</a>
-    </section>
-    <section class="actions">
-        <a href="{$router->urlFor('like', [['id', $tweet->id]])}">+</a>
-        <a href="{$router->urlFor('dislike', [['id', $tweet->id]])}">-</a>
-        <div class="score">{$tweet->score}</div>
-    </section>
-</article>
 EOF;
         return $html;
     }

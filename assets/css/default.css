@@ -180,6 +180,22 @@ section#create textarea{
     height: 100px;
 }
 
+p.followers_count{
+    text-align: center;
+}
+
+table#user_followers{
+    margin: 30px 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: left;
+}
+table#user_followers td{
+    border: 1px solid black;
+    padding: 10px;
+
+}
+
 @media screen and (max-width: 500px){
     main article{
         width: 100%;

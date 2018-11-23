@@ -18,8 +18,11 @@ namespace twerkerapp\controller;
 
 use bfforever\auth\Authentication;
 use bfforever\controller\AbstractController;
+use bfforever\router\Router;
 use Illuminate\Support\Facades\Auth;
 use twerkerapp\auth\TweeterAuthentication;
+use twerkerapp\model\Follow;
+use twerkerapp\model\Like;
 use twerkerapp\model\Tweet;
 use twerkerapp\model\User;
 use twerkerapp\view\TweeterView;
@@ -90,7 +93,14 @@ class TweeterController extends AbstractController {
         $userId = $this->request->get['id'];
 
         $tweets = Tweet::where('author', $userId)->with('user')->get();
-        $tweeterView = new TweeterView($tweets);
+
+        $userFollowersCount = Follow::where('followee', $userId)->count();
+
+        $data = [];
+        $data['tweets'] = $tweets;
+        $data['followers_count'] = $userFollowersCount;
+
+        $tweeterView = new TweeterView($data);
         $tweeterView->render('userTweets');
     }
 
@@ -104,8 +114,14 @@ class TweeterController extends AbstractController {
 
         $userId = User::where('username', $authentication->user_login)->first()->id;
         $userTweets = Tweet::where('author', $userId)->with('user')->orderBy('created_at', 'DESC')->get();
-        $tweeterView = new TweeterView($userTweets);
-        $tweeterView->render('me');
+
+        $userFollowersCount = Follow::where('followee', $userId)->count();
+
+        $data = [];
+        $data['tweets'] = $userTweets;
+        $data['followers_count'] = $userFollowersCount;
+        $tweeterView = new TweeterView($data);
+        $tweeterView->render('userTweets');
     }
 
     public function sendTweet(){
@@ -120,6 +136,59 @@ class TweeterController extends AbstractController {
         $tweets = Tweet::orderBy('created_at', 'DESC')->get();
         $tweeterView = new TweeterView($tweets);
         $tweeterView->render('home');
+    }
+
+    public function likeTweet(){
+        $router = new Router();
+        $auth = new TweeterAuthentication();
+
+        $referer = $_SERVER['HTTP_REFERER'];
+        $tweet_id = $this->request->get['id'];
+
+        $user = User::where('username', $auth->user_login)->first();
+        if(empty(Like::where('user_id', $user->id)->where('tweet_id', $tweet_id)->first())){
+            $like = new Like();
+            $like->user_id = $user->id;
+            $like->tweet_id = $tweet_id;
+            $like->save();
+
+
+            $tweet = Tweet::find($tweet_id);
+            $tweet->score += 1;
+            $tweet->update();
+        }
+        if(!empty($referer)){
+            header('Location: ' . $referer);
+        } else {
+            header('Location: ' . $router->urlFor('home'));
+        }
+    }
+
+    public function dislikeTweet(){
+        $router = new Router();
+        $auth = new TweeterAuthentication();
+
+        $referer = $_SERVER['HTTP_REFERER'];
+        $tweet_id = $this->request->get['id'];
+
+        $user = User::where('username', $auth->user_login)->first();
+        if(empty(Like::where('user_id', $user->id)->where('tweet_id', $tweet_id)->first())){
+            $like = new Like();
+            $like->user_id = $user->id;
+            $like->tweet_id = $tweet_id;
+            $like->save();
+
+
+            $tweet = Tweet::find($tweet_id);
+            $tweet->score -= 1;
+            $tweet->update();
+        }
+        if(!empty($referer)){
+            header('Location: ' . $referer);
+        } else {
+            header('Location: ' . $router->urlFor('home'));
+        }
+
     }
 
     public function phpInfo(){

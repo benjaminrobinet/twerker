@@ -13,6 +13,7 @@ use bfforever\controller\AbstractController;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use twerkerapp\model\Follow;
 use twerkerapp\model\User;
+use twerkerapp\view\DashboardView;
 use twerkerapp\view\TweeterView;
 
 class DashboardController extends AbstractController
@@ -23,16 +24,22 @@ class DashboardController extends AbstractController
         parent::__construct();
 
         TweeterView::addStyleSheet('assets/css/default.css');
-        TweeterView::setAppTitle('Twerker');
+        TweeterView::setAppTitle('Twerker - Dashboard');
     }
 
     public function viewSphere(){
         $userId = 2;
-
         $this->countSphere($userId);
-        echo '<pre>';
-        var_dump($this->sphere);
-        echo '</pre>';
+
+        $dashboardView = new DashboardView();
+        $dashboardView->render('sphere');
+    }
+
+    public function viewUsersByFollowers(){
+        $users = User::with('followedBy')->orderBy('followers', 'DESC')->get();
+
+        $dashboardView = new DashboardView($users);
+        $dashboardView->render('home');
     }
 
     protected function countSphere($user_id, $done = []){

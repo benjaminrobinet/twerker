@@ -35,6 +35,8 @@ DB::connection()->enableQueryLog();
 $router = new \bfforever\router\Router();
 $router->addRoute('home', '/home/', 'TweeterController', 'viewHome', TweeterAuthentication::ACCESS_LEVEL_NONE);
 $router->addRoute('tweet', '/tweet/', 'TweeterController', 'viewTweet', TweeterAuthentication::ACCESS_LEVEL_NONE);
+$router->addRoute('like', '/like/', 'TweeterController', 'likeTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
+$router->addRoute('dislike', '/dislike/', 'TweeterController', 'dislikeTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
 $router->addRoute('user', '/user/', 'TweeterController', 'viewUserTweets', TweeterAuthentication::ACCESS_LEVEL_NONE);
 $router->addRoute('login', '/login/', 'TweeterAdminController', 'viewLogin', TweeterAuthentication::ACCESS_LEVEL_NONE);
 $router->addRoute('logout', '/logout/', 'TweeterAdminController', 'makeLogout', TweeterAuthentication::ACCESS_LEVEL_USER);
@@ -44,7 +46,7 @@ $router->addRoute('signup_check', '/signup_check/', 'TweeterAdminController', 'c
 $router->addRoute('me', '/me/', 'TweeterController', 'viewMe', TweeterAuthentication::ACCESS_LEVEL_USER);
 $router->addRoute('post', '/post/', 'TweeterController', 'viewPostTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
 $router->addRoute('send', '/send/', 'TweeterController', 'sendTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
-$router->addRoute('dashboard', '/dashboard/', 'DashboardController', 'viewSphere', TweeterAuthentication::ACCESS_LEVEL_NONE);
+$router->addRoute('dashboard', '/dashboard/', 'DashboardController', 'viewUsersByFollowers', TweeterAuthentication::ACCESS_LEVEL_PARTNER);
 $router->setDefaultRoute('/home/');
 
 $router->run();
