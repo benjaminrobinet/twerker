@@ -101,8 +101,6 @@ class TweeterController extends AbstractController {
 
     public function viewMe(){
         $authentication = new TweeterAuthentication();
-//        $userTweets = Tweet::with('tweets')->where('username', '=', $authentication->user_login)->first();
-//        var_dump($userTweets); die();
 
         $userId = User::where('username', $authentication->user_login)->first()->id;
         $userTweets = Tweet::where('author', $userId)->with('user')->orderBy('created_at', 'DESC')->get();

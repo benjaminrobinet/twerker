@@ -9,4 +9,5 @@ class Follow extends Model
     protected $table = 'follow';
     protected $primaryKey = 'id';
     public $timestamps = false;
+
 }
