@@ -27,31 +27,61 @@ class DashboardController extends AbstractController
         TweeterView::setAppTitle('Twerker - Dashboard');
     }
 
-    public function viewSphere(){
-        $userId = 2;
-        $this->countSphere($userId);
+    public function viewHome(){
+        return $this->viewUsersByFollowers();
+    }
 
-        $dashboardView = new DashboardView();
-        $dashboardView->render('sphere');
+    public function viewUsersBySphere(){
+        $users = User::all();
+        $data = [];
+        foreach ($users as $user){
+           $data[] = ['user' => $user,
+               'sphere' => $this->countSphere($user->id)];
+        }
+
+        usort($data, 'self::sortBySphere');
+
+        $dashboardView = new DashboardView($data);
+        $dashboardView->render('userSphereCount');
+    }
+
+    private static function sortBySphere($a, $b){
+        $a = $a['sphere'];
+        $b = $b['sphere'];
+
+        if ($a == $b) return 0;
+        return ($a < $b) ? 1 : -1;
     }
 
     public function viewUsersByFollowers(){
         $users = User::with('followedBy')->orderBy('followers', 'DESC')->get();
 
         $dashboardView = new DashboardView($users);
-        $dashboardView->render('home');
+        $dashboardView->render('userFollowersCount');
     }
 
-    protected function countSphere($user_id, $done = []){
+    public function viewUserFollowers(){
+        $userId = $this->request->get['id'];
+        if(!empty($userId)){
+            $user = User::with('followedBy')->where('id', $userId)->first();
+
+            $dashboardView = new DashboardView($user);
+            $dashboardView->render('userFollowers');
+        }
+    }
+
+    protected function countSphere($user_id, $done = [], $count = 0){
         if(!in_array($user_id, $done)){
             $done[] = $user_id;
             $followed = Follow::where('followee', $user_id)->get();
             if($followed->count() !== 0){
-                $this->sphere += $followed->count();
+                $count += $followed->count();
                 foreach ($followed as $line){
-                    return $this->countSphere($line->follower, $done);
+                    return $this->countSphere($line->follower, $done, $count);
                 }
             }
         }
+
+        return $count;
     }
 }

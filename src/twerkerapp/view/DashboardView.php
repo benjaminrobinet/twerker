@@ -4,10 +4,6 @@ namespace twerkerapp\view;
 
 use bfforever\auth\Authentication;
 use bfforever\router\Router;
-use bfforever\utils\HttpRequest;
-use phpDocumentor\Reflection\TypeResolver;
-use twerkerapp\model\Tweet;
-use Rymanalu\TwitterTimeAgo\TwitterTimeAgo;
 
 class DashboardView extends \bfforever\view\AbstractView {
 
@@ -15,7 +11,7 @@ class DashboardView extends \bfforever\view\AbstractView {
         parent::__construct($data);
     }
 
-    public function renderHome(){
+    private function renderHome(){
         $html = '<table id="user_followers">';
         $html .= '<thead>';
         $html .= '<tr>
@@ -36,49 +32,63 @@ class DashboardView extends \bfforever\view\AbstractView {
         return $html;
     }
 
-    public function renderLogin(){
+    private function renderUserFollowersCount(){
         $router = new Router();
-
-        $html = <<<EOF
-<section id="create">
-    <form action="{$router->urlFor('login_check')}" method="post">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <button type="submt">Se connecter</button>
-    </form>
-</section>
-EOF;
-        if(!empty($this->data['errors'])){
-            foreach ($this->data['errors'] as $error){
-                $html .= '<p class="alert-error">' . $error . '</p>';
-            }
+        $html = '<table id="user_followers">';
+        $html .= '<thead>';
+        $html .= '<tr>
+            <th>User</th>
+            <th>Followers (count)</th>
+        </tr>';
+        $html .= '</thead>';
+        $html .= '<tbody>';
+        foreach ($this->data as $user){
+            $html .= '<tr>
+                <td><a href="' . $router->urlFor('dashboard_user_followers') . '?id=' . $user->id . '">' . $user->username . ' ('. $user->fullname .')</a></td>
+                <td>' . $user->followers . '</td>
+            </tr>';
         }
+        $html .= '</tbody>';
+        $html .= '</table>';
+
         return $html;
     }
 
-    public function renderSignup(){
+    private function renderUserSphereCount(){
         $router = new Router();
-
-        $html = <<<EOF
-<section id="create">
-    <form action="{$router->urlFor('signup_check')}" method="post">
-        <div><label for="">Fullname</label> <input type="text" name="fullname"></div>
-        <div><label for="">Username</label> <input type="text" name="username"></div>
-        <div><label for="">Password</label> <input type="password" name="password"></div>
-        <div><label for="">Password Confirmation</label> <input type="password" name="password_confirm"></div>
-        <button type="submt">Register</button>
-    </form>
-</section>
-EOF;
-        if(!empty($this->data['errors'])){
-            foreach ($this->data['errors'] as $error){
-                $html .= '<p class="alert-error">' . $error . '</p>';
-            }
+        $html = '<table id="user_followers">';
+        $html .= '<thead>';
+        $html .= '<tr>
+            <th>User</th>
+            <th>Sphere (count)</th>
+        </tr>';
+        $html .= '</thead>';
+        $html .= '<tbody>';
+        foreach ($this->data as $row){
+            $html .= '<tr>
+                <td><a href="' . $router->urlFor('dashboard_user_followers') . '?id=' . $row['user']->id . '">' . $row['user']->username . ' ('. $row['user']->fullname .')</a></td>
+                <td>' . $row['sphere'] . '</td>
+            </tr>';
         }
+        $html .= '</tbody>';
+        $html .= '</table>';
+
         return $html;
     }
 
-    public function renderHeader(){
+    private function renderUserFollowers(){
+        $user = $this->data;
+        $html = '<ul>
+            <li>' . $user->fullname . '<ul>';
+        foreach ($user->followedBy as $follower){
+            $html .= '<li>' . $follower->fullname . '</li>';
+        }
+        $html .= '</ul></ul></li>';
+
+        return $html;
+    }
+
+    private function renderHeader(){
         $authentication = new Authentication();
         $router = new Router();
         $logged_in = $authentication->logged_in;
@@ -97,10 +107,27 @@ EOF;
         return $html;
     }
 
+    private function renderNav()
+    {
+        $router = new Router();
+
+        $data = '<div class="order_by">
+            <div class="title">Trier par: </div>
+            <nav>
+                <ul>
+                    <li><a href="' . $router->urlFor('dashboard_followers_count') . '">Nombre d\'abonnés</a></li>
+                    <li><a href="' . $router->urlFor('dashboard_sphere_count') . '">Taille de la sphère de suiveurs</a></li>
+                </ul>
+            </nav>
+        </div>';
+
+        return $data;
+    }
+
     /*
      * Render Footer, should not be modified
      */
-    public function renderFooter(){
+    private function renderFooter(){
         return '<footer>La super app créée en Licence Pro &copy;2018</footer>';
     }
 
@@ -112,11 +139,13 @@ EOF;
         $router = new Router();
 
         $header = $this->renderHeader();
+        $nav = $this->renderNav();
         $content = $this->{$renderMethod}();
         $footer = $this->renderFooter();
 
         $html = <<<EOF
 {$header}
+{$nav}
 <main>
     {$content}
 </main>

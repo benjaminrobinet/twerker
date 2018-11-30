@@ -46,7 +46,10 @@ $router->addRoute('signup_check', '/signup_check/', 'TweeterAdminController', 'c
 $router->addRoute('me', '/me/', 'TweeterController', 'viewMe', TweeterAuthentication::ACCESS_LEVEL_USER);
 $router->addRoute('post', '/post/', 'TweeterController', 'viewPostTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
 $router->addRoute('send', '/send/', 'TweeterController', 'sendTweet', TweeterAuthentication::ACCESS_LEVEL_USER);
-$router->addRoute('dashboard', '/dashboard/', 'DashboardController', 'viewUsersByFollowers', TweeterAuthentication::ACCESS_LEVEL_PARTNER);
+$router->addRoute('dashboard', '/dashboard/', 'DashboardController', 'viewHome', TweeterAuthentication::ACCESS_LEVEL_PARTNER);
+$router->addRoute('dashboard_followers_count', '/dashboard/followers', 'DashboardController', 'viewUsersByFollowers', TweeterAuthentication::ACCESS_LEVEL_PARTNER);
+$router->addRoute('dashboard_sphere_count', '/dashboard/sphere', 'DashboardController', 'viewUsersBySphere', TweeterAuthentication::ACCESS_LEVEL_PARTNER);
+$router->addRoute('dashboard_user_followers', '/dashboard/user_followers', 'DashboardController', 'viewUserFollowers', TweeterAuthentication::ACCESS_LEVEL_PARTNER);
 $router->setDefaultRoute('/home/');
 
 $router->run();
