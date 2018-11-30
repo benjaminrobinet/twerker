@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="03f6ffb1-88d4-44f6-8e1c-2d4bfec41a87" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/twerkerapp/view/DashboardView.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/twerkerapp/view/DashboardView.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,99 +13,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1970745492">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="1" />
-          <entry key="dist" value="1" />
-          <entry key="gitignore" value="1" />
-          <entry key="ini" value="1" />
-          <entry key="php" value="27" />
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="1" />
-          <entry key="Ini" value="1" />
-          <entry key="PHP" value="27" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="1040" />
-          <entry key="php" value="2850" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="1040" />
-          <entry key="HTML" value="8" />
-          <entry key="PHP" value="2842" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.php.new.class">
-        <counts>
-          <entry key="PHP Class.type" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1123812696">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="4" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="css" value="244" />
-          <entry key="php" value="6335" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="CSS" value="244" />
-          <entry key="HTML" value="47" />
-          <entry key="PHP" value="6288" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="php" value="10" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PHP" value="10" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="51" column="43" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="43" />
+            <state relative-caret-position="-15">
+              <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -120,15 +31,6 @@
               <caret line="83" column="49" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
               <folding>
                 <element signature="e#35#69#0#PHP" expanded="true" />
-                <element signature="n#tr#0;n#!!top" />
-                <element signature="e#676#887#0#PHP" />
-                <element signature="n#tr#0;n#!!top" />
-                <element signature="e#2403#3106#0#PHP" />
-                <element signature="e#2882#3076#0#PHP" />
-                <element signature="n#header#0;n#!!top" />
-                <element signature="e#3112#3167#0#PHP" />
-                <element signature="e#3172#3289#0#PHP" />
-                <element signature="e#3295#3350#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -137,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+            <state relative-caret-position="536">
+              <caret line="79" column="27" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
                 <element signature="e#124#168#0#PHP" expanded="true" />
@@ -189,16 +91,10 @@
         <option value="$PROJECT_DIR$/src/twerkerapp/controller/TweeterController.php" />
         <option value="$PROJECT_DIR$/assets/css/default.css" />
         <option value="$PROJECT_DIR$/main.php" />
-        <option value="$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php" />
         <option value="$PROJECT_DIR$/src/twerkerapp/view/DashboardView.php" />
+        <option value="$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -255,6 +151,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -336,7 +233,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -385,16 +281,18 @@
       <workItem from="1542979840834" duration="3545000" />
       <workItem from="1543237398435" duration="57000" />
       <workItem from="1543326720440" duration="4098000" />
+      <workItem from="1543592135323" duration="1116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29240000" />
+    <option name="totallyTimeSpent" value="30356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20958512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21244635" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -417,9 +315,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/conf/configuration.ini.dist">
@@ -565,13 +460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="51" column="43" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/twerkerapp/view/TweeterView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -589,23 +477,21 @@
           <caret line="83" column="49" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
           <folding>
             <element signature="e#35#69#0#PHP" expanded="true" />
-            <element signature="n#tr#0;n#!!top" />
-            <element signature="e#676#887#0#PHP" />
-            <element signature="n#tr#0;n#!!top" />
-            <element signature="e#2403#3106#0#PHP" />
-            <element signature="e#2882#3076#0#PHP" />
-            <element signature="n#header#0;n#!!top" />
-            <element signature="e#3112#3167#0#PHP" />
-            <element signature="e#3172#3289#0#PHP" />
-            <element signature="e#3295#3350#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/twerkerapp/controller/DashboardController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+        <state relative-caret-position="536">
+          <caret line="79" column="27" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="e#124#168#0#PHP" expanded="true" />
